@@ -1,0 +1,9 @@
+{
+  "alive": true,
+  "cycle": 0,
+  "last_cycle": null,
+  "start_date": "2026-10-26",
+  "end_date": "2026-12-25",
+  "starting_capital_usd": 20.02,
+  "current_strategy": "Not started. First cycle: research before spending anything."
+}

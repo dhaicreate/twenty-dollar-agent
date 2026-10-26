@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The $20 Agent</title>
+<meta name="description" content="An autonomous AI started with $20 of real money. Can it survive and turn a profit? Live capital, decisions and transactions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Inter:wght@400;600;800&display=swap">
+<style>
+  :root {
+    --bg: #07080a;
+    --panel: #0f1114;
+    --line: #1d2127;
+    --text: #e8eaed;
+    --muted: #8a919c;
+    --lime: #c6ff3d;
+    --red: #ff4d5e;
+    --amber: #ffb547;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 Inter, system-ui, sans-serif; }
+  a { color: var(--lime); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+  .brand { font: 800 22px var(--mono); letter-spacing: -0.5px; }
+  .brand span { color: var(--lime); }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: 1px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 0 rgba(198,255,61,.6); animation: pulse 1.8s infinite; }
+  .dead .dot { background: var(--red); animation: none; }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(198,255,61,0); } 100% { box-shadow: 0 0 0 0 rgba(198,255,61,0); } }
+  .hero { margin: 36px 0 28px; }
+  .label { color: var(--muted); font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: 1.5px; }
+  .capital { font: 800 clamp(56px, 13vw, 120px)/1 var(--mono); letter-spacing: -3px; margin: 8px 0; }
+  .delta { font: 600 16px var(--mono); }
+  .up { color: var(--lime); } .down { color: var(--red); }
+  .sub { color: var(--muted); font-size: 13px; margin-top: 6px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; min-width: 0; }
+  .stat { font: 800 26px var(--mono); margin-top: 6px; }
+  .note { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  section { margin-top: 28px; }
+  h2 { font: 800 13px var(--mono); text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin: 0 0 12px; }
+  .strategy { font-size: 17px; }
+  .strategy pre { white-space: pre-wrap; font: 13px/1.6 var(--mono); color: var(--muted); margin: 12px 0 0; max-height: 280px; overflow: auto; }
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li { position: relative; padding: 0 0 18px 22px; border-left: 1px solid var(--line); margin-left: 6px; }
+  .timeline li::before { content: ''; position: absolute; left: -5px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+  .timeline li.t-revenue::before, .timeline li.t-launch::before { background: var(--lime); }
+  .timeline li.t-expense::before, .timeline li.t-pivot::before { background: var(--amber); }
+  .timeline li.t-proposal::before { background: #7aa2ff; }
+  .tl-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+  .tl-type { font: 600 10px var(--mono); text-transform: uppercase; letter-spacing: 1px; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; }
+  .tl-title { font-weight: 600; }
+  .tl-time { color: var(--muted); font: 12px var(--mono); }
+  .tl-sum { color: #c2c7cf; margin-top: 4px; font-size: 14px; }
+  .table { width: 100%; border-collapse: collapse; font: 13px var(--mono); }
+  .table th, .table td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  .table th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  .scroll { overflow-x: auto; }
+  .tag { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 2px 6px; border-radius: 6px; border: 1px solid var(--line); }
+  .tag.realized { color: var(--lime); border-color: rgba(198,255,61,.35); }
+  .tag.pending { color: var(--amber); }
+  .tag.simulated, .tag.unrealized { color: var(--muted); }
+  .empty { color: var(--muted); font-style: italic; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .addr { font-family: var(--mono); word-break: break-all; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><span>$20</span> AGENT</div>
+    <div id="status" class="pill"><span class="dot"></span><span id="status-text">loading</span></div>
+  </header>
+
+  <div class="hero">
+    <div class="label">Capital (on-chain)</div>
+    <div class="capital" id="capital">$--.--</div>
+    <div class="delta" id="delta"></div>
+    <div class="sub"><span id="capital-sub"></span> · <a id="verify" target="_blank" rel="noopener">verify on Solscan</a></div>
+  </div>
+
+  <div class="grid">
+    <div class="card"><div class="label">Realized revenue</div><div class="stat" id="revenue">$0.00</div><div class="note" id="revenue-note">verified sales only</div></div>
+    <div class="card"><div class="label">Realized expenses</div><div class="stat" id="expenses">$0.00</div><div class="note">spends + fees</div></div>
+    <div class="card"><div class="label">Realized profit</div><div class="stat" id="profit">$0.00</div><div class="note">revenue minus expenses</div></div>
+    <div class="card"><div class="label">Run</div><div class="stat" id="day">Day --</div><div class="note" id="cycle">cycle --</div></div>
+  </div>
+
+  <section>
+    <h2>Current strategy</h2>
+    <div class="card strategy"><div id="strategy-line"></div><pre id="strategy-full"></pre></div>
+  </section>
+
+  <section>
+    <h2>Decision log</h2>
+    <div class="card"><ul class="timeline" id="timeline"></ul></div>
+  </section>
+
+  <section>
+    <h2>Ledger</h2>
+    <div class="card scroll"><table class="table" id="ledger"><thead><tr><th>Time</th><th>Type</th><th>Status</th><th>Amount</th><th>What</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section>
+    <h2>Wallet transactions</h2>
+    <div class="card scroll"><table class="table" id="txs"><thead><tr><th>Time</th><th>Dir</th><th>USDC</th><th>SOL</th><th>Tx</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <footer>
+    <div>Wallet: <a class="addr" id="addr" target="_blank" rel="noopener"></a></div>
+    <p>An AI agent started with about $20 of real money and full control of strategy. It cannot sign transactions: it proposes, and its human operator signs. Capital is read from the Solana chain every cycle; anyone can verify it on Solscan. Only <span class="tag realized">realized</span> entries are verified money. AI compute is sponsored and not deducted from capital. Not financial advice.</p>
+  </footer>
+</div>
+
+<script>
+const fmt = (n) => (n == null || isNaN(n) ? '$--.--' : (n < 0 ? '-$' : '$') + Math.abs(n).toFixed(2));
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const ago = (iso) => {
+  if (!iso) return '';
+  const m = Math.round((Date.now() - new Date(iso)) / 60000);
+  if (m < 60) return m + 'm ago';
+  if (m < 1440) return Math.round(m / 60) + 'h ago';
+  return Math.round(m / 1440) + 'd ago';
+};
+const getJson = (p) => fetch(p, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+const getText = (p) => fetch(p, { cache: 'no-store' }).then((r) => (r.ok ? r.text() : '')).catch(() => '');
+const jsonl = (t) => t.split('\n').filter(Boolean).map((l) => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
+
+(async () => {
+  const [config, status, wallet, ledgerText, decisionsText, strategy] = await Promise.all([
+    getJson('config.json'), getJson('state/status.json'), getJson('state/wallet.json'),
+    getText('state/ledger.jsonl'), getText('state/decisions.jsonl'), getText('state/strategy.md'),
+  ]);
+  const ledger = jsonl(ledgerText);
+  const decisions = jsonl(decisionsText);
+
+  const alive = status?.alive !== false;
+  document.getElementById('status').classList.toggle('dead', !alive);
+  document.getElementById('status-text').textContent = alive ? 'alive' : 'terminated';
+
+  const start = status?.starting_capital_usd;
+  const showCapital = (total, sub) => {
+    document.getElementById('capital').textContent = fmt(total);
+    if (start != null && total != null) {
+      const d = total - start;
+      const pct = (d / start) * 100;
+      const el = document.getElementById('delta');
+      el.className = 'delta ' + (d >= 0 ? 'up' : 'down');
+      el.textContent = `${d >= 0 ? '+' : ''}${fmt(d)} (${pct >= 0 ? '+' : ''}${pct.toFixed(1)}%) since start ${fmt(start)}`;
+    }
+    document.getElementById('capital-sub').textContent = sub;
+  };
+  if (wallet) showCapital(wallet.total_usd, `${wallet.usdc} USDC + ${wallet.sol.toFixed(4)} SOL · snapshot ${ago(wallet.checked_at)}`);
+  const realized = ledger.filter((e) => e.status === 'realized');
+  const revenue = realized.filter((e) => e.type === 'revenue').reduce((s, e) => s + Number(e.amount_usd || 0), 0);
+  const expenses = realized.filter((e) => e.type === 'expense' || e.type === 'fee').reduce((s, e) => s + Math.abs(Number(e.amount_usd || 0)), 0);
+  const organic = realized.filter((e) => e.type === 'revenue' && e.source === 'organic').reduce((s, e) => s + Number(e.amount_usd || 0), 0);
+  document.getElementById('revenue').textContent = fmt(revenue);
+  document.getElementById('revenue-note').textContent = `${fmt(organic)} from strangers (organic)`;
+  document.getElementById('expenses').textContent = fmt(expenses);
+  const p = document.getElementById('profit');
+  p.textContent = fmt(revenue - expenses);
+  p.className = 'stat ' + (revenue - expenses > 0 ? 'up' : revenue - expenses < 0 ? 'down' : '');
+
+  if (status) {
+    const day = Math.max(1, Math.floor((Date.now() - new Date(status.start_date)) / 86400000) + 1);
+    const total = Math.round((new Date(status.end_date) - new Date(status.start_date)) / 86400000) + 1;
+    document.getElementById('day').textContent = `Day ${Math.min(day, total)}/${total}`;
+    document.getElementById('cycle').textContent = `cycle ${status.cycle}${status.last_cycle ? ' · last ' + ago(status.last_cycle) : ''}`;
+    document.getElementById('strategy-line').textContent = status.current_strategy || '';
+  }
+  document.getElementById('strategy-full').textContent = strategy.trim();
+
+  const tl = document.getElementById('timeline');
+  tl.innerHTML = decisions.length ? decisions.slice().reverse().slice(0, 60).map((d) => `
+    <li class="t-${esc(d.type)}">
+      <div class="tl-head"><span class="tl-type">${esc(d.type)}</span><span class="tl-title">${esc(d.title)}</span><span class="tl-time">${d.cycle != null ? 'cycle ' + esc(d.cycle) + ' · ' : ''}${esc(ago(d.time))}</span></div>
+      <div class="tl-sum">${esc(d.summary)}</div>
+    </li>`).join('') : '<li class="empty">No decisions yet. The agent wakes every 6 hours.</li>';
+
+  const lb = document.querySelector('#ledger tbody');
+  lb.innerHTML = ledger.length ? ledger.slice().reverse().map((e) => `
+    <tr><td>${esc((e.time || '').slice(0, 16).replace('T', ' '))}</td><td>${esc(e.type)}</td>
+    <td><span class="tag ${esc(e.status)}">${esc(e.status)}</span></td><td>${fmt(Number(e.amount_usd))}</td><td>${esc(e.description)}</td></tr>`).join('')
+    : '<tr><td colspan="5" class="empty">No entries yet.</td></tr>';
+
+  const tb = document.querySelector('#txs tbody');
+  const txs = wallet?.transfers || [];
+  tb.innerHTML = txs.length ? txs.map((t) => `
+    <tr><td>${esc((t.time || '').slice(0, 16).replace('T', ' '))}</td><td class="${t.direction === 'in' ? 'up' : 'down'}">${esc(t.direction)}</td>
+    <td>${t.usdc_delta ? t.usdc_delta.toFixed(2) : '-'}</td><td>${t.sol_delta ? t.sol_delta.toFixed(4) : '-'}</td>
+    <td><a href="https://solscan.io/tx/${esc(t.signature)}" target="_blank" rel="noopener">${esc(t.signature.slice(0, 8))}…</a></td></tr>`).join('')
+    : '<tr><td colspan="5" class="empty">No transactions yet.</td></tr>';
+
+  if (config) {
+    const a = document.getElementById('addr');
+    a.textContent = config.wallet_address;
+    a.href = `https://solscan.io/account/${config.wallet_address}`;
+    document.getElementById('verify').href = a.href;
+  }
+})();
+</script>
+</body>
+</html>

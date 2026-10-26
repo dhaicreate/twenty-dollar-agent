@@ -1,0 +1,9 @@
+{
+  "wallet_address": "7rsPg8yFqSBzWjNsGhk1vR5VoZX3Fo1QLFN3VNnMvXUt",
+  "operator_github": "dhaicreate",
+  "usdc_mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+  "rpc_url": "https://api.mainnet-beta.solana.com",
+  "start_date": "2026-10-26",
+  "end_date": "2026-12-25",
+  "death_threshold_usd": 0.5
+}

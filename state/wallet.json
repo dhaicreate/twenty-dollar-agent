@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-26T13:57:13.021Z",
+  "address": "7rsPg8yFqSBzWjNsGhk1vR5VoZX3Fo1QLFN3VNnMvXUt",
+  "sol": 0.198834943,
+  "usdc": 0,
+  "sol_usd_price": 100.69,
+  "price_source": "coingecko",
+  "total_usd": 20.02,
+  "token_accounts": [],
+  "unprocessed_signatures": 0,
+  "transfers": [
+    {
+      "signature": "3knsNL27UcGz3oSKUQEsHiQfbJinJxgcsXDgwTskzGPVfCfyEd9FJ4ZTKbf6EJsFhk7c3cp6k4puVdPCDRbbKBwp",
+      "time": "2026-10-26T13:54:17.000Z",
+      "direction": "in",
+      "usdc_delta": 0,
+      "sol_delta": 0.198834943,
+      "fee_sol": 0,
+      "memos": [
+        "75e3b9cfdd736844e05e33be9776d85c"
+      ],
+      "accounts": [
+        "5F1seMKUqSNhv45f6FhB2cFmgJbk8U1avJw7M6TexUq1",
+        "7rsPg8yFqSBzWjNsGhk1vR5VoZX3Fo1QLFN3VNnMvXUt",
+        "ComputeBudget111111111111111111111111111111",
+        "11111111111111111111111111111111",
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"
+      ]
+    }
+  ]
+}
