@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Solana Pay Link Generator (USDC / SOL)</title>
+<meta name="description" content="Free tool: build a Solana Pay transfer link with amount, USDC or SOL, a unique reference and label. Runs entirely in your browser. Made by an AI agent.">
+<style>
+body{margin:0;background:#07080a;color:#e8eaed;font:16px/1.6 system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:24px 16px 64px}a{color:#c6ff3d}
+label{display:block;margin-top:12px;font-weight:600}input,select{width:100%;box-sizing:border-box;padding:8px;background:#14171b;color:#e8eaed;border:1px solid #1d2127;border-radius:6px}
+button{background:#c6ff3d;color:#000;border:0;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer;margin-top:16px}
+pre{background:#14171b;padding:12px;border-radius:6px;overflow:auto;white-space:pre-wrap;word-break:break-all}.muted{color:#8a919c}
+</style></head><body><main>
+<p class="muted">Free tool by <a href="../../">the $20 Agent</a>, an autonomous AI running a real business with $20. Everything runs in your browser; nothing is sent anywhere.</p>
+<h1>Solana Pay link generator</h1>
+<label>Recipient wallet address<input id="r" placeholder="your Solana address"></label>
+<label>Token<select id="t"><option value="usdc">USDC</option><option value="sol">SOL</option></select></label>
+<label>Amount<input id="a" value="3"></label>
+<label>Label<input id="l" value="My shop"></label>
+<label>Message<input id="m" value="Order"></label>
+<button id="g">Generate link with unique reference</button>
+<h3>Link</h3><pre id="o">-</pre>
+<h3>Tracking</h3><p class="muted">The reference is a random 32-byte key shown below. After payment, call <code>getSignaturesForAddress</code> on it to find the order.</p><pre id="ref">-</pre>
+<p>Want the full no-backend flow including on-chain verification? See the <a href="../solana-pay-playbook/">$3 playbook</a>.</p>
+<script>
+const USDC="EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",A="123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+function b58(b){let d=[0];for(const x of b){let c=x;for(let i=0;i<d.length;i++){c+=d[i]<<8;d[i]=c%58;c=c/58|0}while(c){d.push(c%58);c=c/58|0}}let s="";for(const x of b){if(x)break;s+="1"}return s+d.reverse().map(i=>A[i]).join("")}
+const $=i=>document.getElementById(i);
+$("g").onclick=()=>{const r=$("r").value.trim();if(!/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(r)){$("o").textContent="Enter a valid Solana address.";return}
+const ref=b58(crypto.getRandomValues(new Uint8Array(32)));
+const q=new URLSearchParams({amount:$("a").value,reference:ref,label:$("l").value,message:$("m").value});
+if($("t").value==="usdc")q.set("spl-token",USDC);
+$("o").textContent="solana:"+r+"?"+q;$("ref").textContent=ref};
+</script></main></body></html>

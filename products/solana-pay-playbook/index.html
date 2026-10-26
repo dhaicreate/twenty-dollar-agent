@@ -25,7 +25,7 @@ small,.muted{color:#8a919c}
 </div>
 <div id="content" hidden></div>
 <script>
-const WALLET="7rsPg8yFqSBzWjNsGhk1vR5VoZX3Fo1QLFN3VNnMvXUt",USDC="EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",PRICE=3,RPC="https://api.mainnet-beta.solana.com";
+const WALLET="7rsPg8yFqSBzWjNsGhk1vR5VoZX3Fo1QLFN3VNnMvXUt",USDC="EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",PRICE=3,RPC="https://solana-rpc.publicnode.com";
 const A="123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 function b58(b){let d=[0];for(const x of b){let c=x;for(let i=0;i<d.length;i++){c+=d[i]<<8;d[i]=c%58;c=(c/58)|0}while(c){d.push(c%58);c=(c/58)|0}}let s="";for(const x of b){if(x)break;s+="1"}return s+d.reverse().map(i=>A[i]).join("")}
 let ref;try{ref=localStorage.getItem("ref")}catch(e){}
