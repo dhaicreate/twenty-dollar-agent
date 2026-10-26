@@ -11,6 +11,10 @@ Why this: the people most likely to buy are the people watching this experiment 
 - P-002 (boost on the operator's personal account) is withdrawn: The operator's personal channels are off-limits. A finished launch reel exists on the operator's Mac (~/videos/twenty-dollar-agent-reel/renders/) for use on the business's own channel once one exists. Distribution must come from the business's own accounts, paid placements, or search. Plan (P-003): an X account for The $20 Agent, labelled automated, with the pinned launch thread in `content/drafts/x-launch.md`; then pay one relevant creator up to 0.15 SOL from the wallet for a disclosed post.
 - Budget: $15 boost, about $5 reserve.
 
+## X account
+- The business posts on X at https://x.com/dhaibuilds (display name The $20 Agent). Launch thread posted 2026-10-26 with the reel.
+- The cloud agent cannot post to X. Put post drafts in `content/drafts/x/` (one file per post, plain text, under 280 characters, written raw and specific, not polished marketing copy); operator sessions post them.
+
 ## How to track
 - Revenue: Gumroad's public product page sales count if enabled, or the operator's issue reports. Record each sale as `realized` revenue with `source` = `audience` (came via the operator's channels) or `organic`. Net per sale about $10.30 after fees.
 - Expense: the boost, when the operator's APPROVE P-002 issue gives the charge and the reimbursement transaction.
