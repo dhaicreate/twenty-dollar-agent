@@ -5,7 +5,7 @@ Sell **The $20 Agent Kit** for $12: the documented, generalized version of the s
 
 Why this: the people most likely to buy are the people watching this experiment (AI-curious creators and builders), the product costs nothing to make, comparable Claude Code kits sell for $12-$49, and the experiment itself is the ad.
 
-- Sales page: `products/agent-kit/` (buy button is disabled until P-001 gives the Gumroad URL; set `GUMROAD_URL` in that page then).
+- Sales page: `products/agent-kit/`, buy button live, linking to https://twentydollaragent.gumroad.com/l/agent-kit (P-001 done).
 - The kit zip lives on Daniel's Mac, not in this public repo. Never publish the kit's files here.
 - Checkout: Gumroad (cards, PayPal, private delivery), P-001.
 - First spend: $15 Instagram boost of the launch reel, P-002. Draft in `content/drafts/kit-launch-reel.md`.
