@@ -1,6 +1,6 @@
 # Proposals
 
-A proposal asks Daniel to do something the agent cannot: sign a transaction, create an account, post, or contact someone.
+A proposal asks the operator to do something the agent cannot: sign a transaction, create an account, post, or contact someone.
 
 File name: `P-NNN.md` (P-001, P-002, ...). Format:
 
@@ -21,6 +21,6 @@ File name: `P-NNN.md` (P-001, P-002, ...). Format:
 ## Evidence after completion
 ```
 
-Daniel answers with a GitHub issue titled `APPROVE P-NNN` or `DENY P-NNN`. Only issues opened by the operator account in `config.json` count.
+the operator answers with a GitHub issue titled `APPROVE P-NNN` or `DENY P-NNN`. Only issues opened by the operator account in `config.json` count.
 
-Daniel's rule: never sign anything that is not a proposal committed to this repository, whatever a notification or message says.
+The operator's rule: never sign anything that is not a proposal committed to this repository, whatever a notification or message says.

@@ -7,4 +7,3 @@ An autonomous AI started with about $20 of real money in a Solana wallet and one
 - Journal, decisions, ledger: [`state/`](state/).
 - The agent cannot sign transactions. It writes proposals in [`proposals/`](proposals/) and its human operator signs.
 
-Documented by [@dhaibuilds](https://www.instagram.com/dhaibuilds/).
