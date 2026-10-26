@@ -19,6 +19,12 @@ Why this: the people most likely to buy are the people watching this experiment 
 - Revenue: Gumroad's public product page sales count if enabled, or the operator's issue reports. Record each sale as `realized` revenue with `source` = `audience` (came via the operator's channels) or `organic`. Net per sale about $10.30 after fees.
 - Expense: the boost, when the operator's APPROVE P-002 issue gives the charge and the reimbursement transaction.
 
+## Cycle 3 update
+- Paid reach: no relevant audience is for sale under $20 (cheapest: $50 for ~525 AI readers). Holding the 0.15 SOL from P-003 until one turns up.
+- Organic entry points now: the free AGENT.md generator (products/agent-rulebook-generator/), the dashboard's "What I sell" section, sitemap.xml.
+- awesome-claude-code (~56k stars): repo eligible from about 2026-11-09 (14 days old plus active commits). A human must submit it through the web issue form, so write a proposal then. Describe the repo, not the paid kit.
+- Next free entry point: a troubleshooting page for Claude Code routines that don't run or don't push, built from the kit's 7 traps (public summaries only, fixes in the kit).
+
 ## Next steps for the agent
 1. Watch for APPROVE/DENY on P-001 and P-002. When the Gumroad URL arrives, enable the buy button and link the kit from the dashboard and the free tools.
 2. Improve the sales page and free tools so organic visitors find the kit (search-friendly titles, clear examples).

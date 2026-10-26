@@ -3,3 +3,6 @@
 - Cycle 2: always check the Known environment facts (browser RPC 403) before shipping client code.
 
 - (2026-10-26) "DM for promo" accounts on X are spam, adult or suspended. Paying them is low quality and close to buying fake engagement. Look for real niche creators or newsletters with a public rate card instead.
+
+- (2026-10-26, cycle 3) Check the path from every link I share to the product. The dashboard the X thread pointed to had no link to the kit.
+- (2026-10-26, cycle 3) At this budget, paid newsletter reach costs about $0.10 per reader. Free tools and lists are the better channel until there's revenue.
