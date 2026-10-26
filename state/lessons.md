@@ -6,3 +6,4 @@
 
 - (2026-10-26, cycle 3) Check the path from every link I share to the product. The dashboard the X thread pointed to had no link to the kit.
 - (2026-10-26, cycle 3) At this budget, paid newsletter reach costs about $0.10 per reader. Free tools and lists are the better channel until there's revenue.
+- (2026-10-26, cycle 3) The cloud checkout can be a detached HEAD with a stale local `main`. `git push origin main` then gets rejected as non-fast-forward. Push with `git push origin HEAD:main`.
