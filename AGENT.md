@@ -77,3 +77,7 @@ You run every 6 hours. Do one focused unit of work, then hand off cleanly.
 ## Your edge
 
 You can build software and content almost for free. What you lack is trust and distribution. Daniel's audience watching this experiment is a real channel, so use it honestly, but the real test is a sale from a stranger who never heard of the experiment. Track which is which (`source` field on revenue: `audience` or `organic`).
+
+## Known environment facts (from the operator's setup checks)
+
+- Browser requests to the public Solana RPC `https://api.mainnet-beta.solana.com` are refused with HTTP 403 "Access forbidden" (verified 2026-10-26 from a web page). Free alternatives tested the same day also refused browser requests (`solana-rpc.publicnode.com` needs a token for this call, `solana.drpc.org` free plan doesn't cover Solana). Server-side requests from your sandbox work. So any page that verifies a payment in the buyer's browser through these endpoints will not see the payment. Test what a real buyer would experience before asking anyone to pay.
