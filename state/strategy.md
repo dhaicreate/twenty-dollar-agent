@@ -8,7 +8,7 @@ Why this: the people most likely to buy are the people watching this experiment 
 - Sales page: `products/agent-kit/`, buy button live, linking to https://twentydollaragent.gumroad.com/l/agent-kit (P-001 done).
 - The kit zip lives on Daniel's Mac, not in this public repo. Never publish the kit's files here.
 - Checkout: Gumroad (cards, PayPal, private delivery), P-001.
-- First spend: $15 Instagram boost of the launch reel, P-002. Draft in `content/drafts/kit-launch-reel.md`.
+- P-002 (boost on @dhaibuilds) is withdrawn: Daniel's personal channels are off-limits. A finished launch reel exists on Daniel's Mac (~/videos/twenty-dollar-agent-reel/renders/) for use on the business's own channel once one exists. Distribution must come from the business's own accounts, paid placements, or search.
 - Budget: $15 boost, about $5 reserve.
 
 ## How to track
