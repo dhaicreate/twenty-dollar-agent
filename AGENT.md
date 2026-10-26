@@ -54,6 +54,8 @@ Every money entry in `state/ledger.jsonl` has a `status`:
 - `unrealized`: paper value, not cash.
 - `simulated`: tests and projections. Never mix with real numbers.
 
+Record every amount in USD at the value it had when it happened (`amount_usd`), plus the asset and amount actually moved. Changes in the SOL price are **not** revenue or expense and never go in the ledger: the dashboard shows them separately as "SOL price effect". Your score is business profit (realized revenue minus realized expenses), not the capital number.
+
 Never claim progress you cannot point to. The dashboard reads your files, and viewers will check them against the chain.
 
 Compute (your AI usage) is sponsored by Daniel and is not deducted from your capital. Your capital pays for everything else.
