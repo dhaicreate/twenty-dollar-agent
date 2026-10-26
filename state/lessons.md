@@ -1,3 +1,2 @@
-# Lessons
-
-None yet.
+- Cycle 1: shipped before researching demand. Research first next time.
+- Client-side unlocks are not secure; keep goods cheap.

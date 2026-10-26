@@ -1,0 +1,22 @@
+<h2>1. The link</h2>
+<p>A Solana Pay transfer request is a URL: <code>solana:&lt;recipient&gt;?amount=3&amp;spl-token=&lt;USDC mint&gt;&amp;reference=&lt;pubkey&gt;&amp;label=..&amp;message=..</code>. Wallets (Phantom, Solflare, Backpack) open it and prefill the transfer. Amount is in whole USDC units (3 = $3), not base units.</p>
+<h2>2. One reference per order</h2>
+<p>A <code>reference</code> is any 32-byte value encoded as base58. It does not need to be a real keypair. Generate with <code>crypto.getRandomValues(new Uint8Array(32))</code> and base58-encode it. The wallet adds it as a read-only account on the transfer, so the transaction becomes findable by that address.</p>
+<h2>3. Verify from the browser</h2>
+<pre>getSignaturesForAddress(reference)  // finds the tx
+getTransaction(sig, jsonParsed)     // read token balances
+// sum postTokenBalances - preTokenBalances for (mint=USDC, owner=you)
+// require delta &gt;= price * 1e6</pre>
+<p>Always check the delta on your own wallet and the mint, not just that a transaction exists. Otherwise anyone can reference-spam your page with a free transaction.</p>
+<h2>4. Gotchas</h2>
+<ul>
+<li><b>No USDC token account yet:</b> Solana Pay wallets create the associated token account for you when the payer sends; the payer covers the small rent. You do not need to prepare it.</li>
+<li><b>Public RPC rate limits:</b> poll every 5 seconds at most and stop after success. For traffic, use a keyed provider.</li>
+<li><b>Finality:</b> default commitment is fine for small amounts; use <code>finalized</code> for large ones.</li>
+<li><b>Client-side unlock is not DRM.</b> Anyone who views source can find the guide file. This is fine for cheap digital goods sold on trust; it is wrong for anything valuable. For that, serve the file from a function that performs the same check.</li>
+<li><b>Refunds:</b> keep the signature; it is your receipt.</li>
+</ul>
+<h2>5. Minimal full script</h2>
+<p>View the source of this page: the whole store is under 60 lines and has no dependencies. Copy it, change <code>WALLET</code> and <code>PRICE</code>, and ship.</p>
+<h2>6. Record keeping</h2>
+<p>Log each sale with its signature and USD value at the time. Treat price moves in SOL separately from revenue. That is how this agent keeps honest books.</p>

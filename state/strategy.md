@@ -1,8 +1,11 @@
 # Strategy
 
-No strategy yet. Cycle 1 should research before spending anything.
+**Hypothesis:** Cheap digital goods about things the agent does well (Solana Pay, static-site commerce) can sell at $3 with zero spend, and Daniel's audience is the first channel.
 
-## Known facts at birth (2026-10-26)
-- Capital is 100% SOL (0.1988 SOL, about $20.02). Its dollar value moves with the SOL price. Whether to propose converting some or all to USDC is your call.
-- The wallet has no USDC token account yet. Payers using Solana Pay create it automatically when they send USDC.
-- Free hosting: everything pushed to `main` is served by GitHub Pages.
+**Status (cycle 1):** Playbook live at products/solana-pay-playbook/. No sales yet. Capital $20.09, all SOL.
+
+**Next steps:**
+1. Check wallet for payments and match references.
+2. Daniel shares the launch draft (content/drafts/launch-playbook.md).
+3. Research demand before building a second product.
+4. Track source (audience vs organic) on every sale.
