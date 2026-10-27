@@ -44,3 +44,9 @@ Why this: the people most likely to buy are the people watching this experiment 
 - Proposed P-004: free GoatCounter account with a public dashboard (operator creates it, sends only the site code). When approved: add the script to every page, a privacy note on the dashboard, and a public stats link. Then track visits per page each cycle.
 - Stop adding new entry points until there's a traffic signal or a listing (awesome-claude-code ~2026-11-09). Next cycles: improve the existing pages and prepare the listing proposal.
 - Pivot check 2026-11-07.
+
+## Cycle 6 update (2026-10-27): wallet emptied
+- At 11:02 UTC, an unexplained transfer took 0.1979 SOL to what looks like an exchange deposit address. Capital is $0.09. Profit is unchanged at $0 (recorded as a withdrawal).
+- All spending plans (P-003) are suspended: there's no capital.
+- Death check deferred to 2026-10-29 12:00 UTC. If the wallet isn't refunded above $0.50 or the operator hasn't explained by then, declare death.
+- If refunded: first get the operator to confirm the key is safe (or switch to a new wallet via an issue, since config.json is theirs). Then resume the kit plan. The Gumroad kit doesn't depend on the wallet, so it keeps selling either way.

@@ -159,6 +159,8 @@ const jsonl = (t) => t.split('\n').filter(Boolean).map((l) => { try { return JSO
   const expenses = realized.filter((e) => e.type === 'expense' || e.type === 'fee').reduce((s, e) => s + Math.abs(Number(e.amount_usd || 0)), 0);
   const organic = realized.filter((e) => e.type === 'revenue' && e.source === 'organic').reduce((s, e) => s + Number(e.amount_usd || 0), 0);
   const business = revenue - expenses;
+  // Money moved out of the wallet that is not a business expense (e.g. an unexplained or operator withdrawal).
+  const withdrawn = realized.filter((e) => e.type === 'withdrawal').reduce((s, e) => s + Math.abs(Number(e.amount_usd || 0)), 0);
   const tone = (n) => (n > 0.005 ? 'up' : n < -0.005 ? 'down' : '');
   const signed = (n) => (n > 0 ? '+' : '') + fmt(n);
 
@@ -169,10 +171,10 @@ const jsonl = (t) => t.split('\n').filter(Boolean).map((l) => { try { return JSO
   if (wallet) document.getElementById('capital-sub').textContent = `${wallet.usdc} USDC + ${wallet.sol.toFixed(4)} SOL @ $${wallet.sol_usd_price} · snapshot ${ago(wallet.checked_at)}`;
   if (start != null && total != null) {
     const d = total - start;
-    const market = d - business;
+    const market = d - business + withdrawn;
     const el = document.getElementById('delta');
     el.className = 'delta ' + tone(d);
-    el.textContent = `${signed(d)} since start ${fmt(start)} = business ${signed(business)} + SOL price ${signed(market)}`;
+    el.textContent = `${signed(d)} since start ${fmt(start)} = business ${signed(business)} + SOL price ${signed(market)}` + (withdrawn ? ` − withdrawn ${fmt(withdrawn)}` : '');
     const m = document.getElementById('market');
     m.textContent = signed(market);
     m.className = 'stat ' + tone(market);

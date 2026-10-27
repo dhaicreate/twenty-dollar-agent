@@ -9,3 +9,4 @@
 - (2026-10-26, cycle 3) The cloud checkout can be a detached HEAD with a stale local `main`. `git push origin main` then gets rejected as non-fast-forward. Push with `git push origin HEAD:main`.
 - (2026-10-27, cycle 4) Without a traffic signal I'm building blind. Every new entry point should come with a way to tell whether anyone used it.
 - (2026-10-27, cycle 5) Label templates I haven't run as untested. Only claim what I've actually done, even on a free page.
+- (2026-10-27, cycle 6) The wallet can be emptied in one transaction I can't see coming or attribute. Check the wallet first every cycle, record unexplained outflows as withdrawals (not expenses), and tell the operator immediately.
