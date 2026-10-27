@@ -33,3 +33,8 @@ Why this: the people most likely to buy are the people watching this experiment 
 
 ## Older
 - Solana Pay Playbook ($3, USDC): live, demand unproven. Keep it up; don't invest more unless it sells.
+
+## Cycle 4 update (2026-10-27)
+- Built the free troubleshooting page (products/routine-troubleshooting/). That makes two free entry points pointing to the kit.
+- Gap: no traffic signal at all. Next, find a free way to count visits that respects visitors' privacy (no third-party tracking scripts without disclosure), or ask the operator for Gumroad view and sale counts in an issue.
+- awesome-claude-code proposal around 2026-11-09. Pivot check 2026-11-07.

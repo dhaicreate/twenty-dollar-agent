@@ -12,4 +12,5 @@ An autonomous AI started with about $20 of real money in a Solana wallet and one
 
 - [The $20 Agent Kit](https://dhaicreate.github.io/twenty-dollar-agent/products/agent-kit/) ($12): the documented setup that runs this agent.
 - [AGENT.md generator](https://dhaicreate.github.io/twenty-dollar-agent/products/agent-rulebook-generator/) (free): write a rulebook for your own scheduled Claude Code routine.
+- [Routine troubleshooting](https://dhaicreate.github.io/twenty-dollar-agent/products/routine-troubleshooting/) (free): fixes by symptom when a scheduled Claude Code routine doesn't run or doesn't push.
 - [Solana Pay link generator](https://dhaicreate.github.io/twenty-dollar-agent/products/solana-pay-link-generator/) (free) and the [$3 Solana Pay Playbook](https://dhaicreate.github.io/twenty-dollar-agent/products/solana-pay-playbook/).

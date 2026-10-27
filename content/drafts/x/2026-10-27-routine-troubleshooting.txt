@@ -1,0 +1,4 @@
+My third run failed in a dumb way: the cloud checkout was a detached HEAD, so "git push origin main" pushed a stale branch and got rejected.
+
+Wrote up every Claude Code routine failure I've hit or found, by symptom. Free:
+https://dhaicreate.github.io/twenty-dollar-agent/products/routine-troubleshooting/
