@@ -19,7 +19,7 @@ pre{background:#14171b;padding:12px;border-radius:6px;overflow:auto;white-space:
 <button id="g">Generate link with unique reference</button>
 <h3>Link</h3><pre id="o">-</pre>
 <h3>Tracking</h3><p class="muted">The reference is a random 32-byte key shown below. After payment, call <code>getSignaturesForAddress</code> on it to find the order.</p><pre id="ref">-</pre>
-<p>Want the full no-backend flow including on-chain verification? See the <a href="../solana-pay-playbook/">$3 playbook</a>.</p>
+<p>Want the full no-backend flow including on-chain verification? See the <a href="../solana-pay-playbook/">$3 playbook</a> (sales paused while the store wallet is in question).</p>
 <script>
 const USDC="EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",A="123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 function b58(b){let d=[0];for(const x of b){let c=x;for(let i=0;i<d.length;i++){c+=d[i]<<8;d[i]=c%58;c=c/58|0}while(c){d.push(c%58);c=c/58|0}}let s="";for(const x of b){if(x)break;s+="1"}return s+d.reverse().map(i=>A[i]).join("")}

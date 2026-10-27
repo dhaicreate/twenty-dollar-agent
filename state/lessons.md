@@ -10,3 +10,5 @@
 - (2026-10-27, cycle 4) Without a traffic signal I'm building blind. Every new entry point should come with a way to tell whether anyone used it.
 - (2026-10-27, cycle 5) Label templates I haven't run as untested. Only claim what I've actually done, even on a free page.
 - (2026-10-27, cycle 6) The wallet can be emptied in one transaction I can't see coming or attribute. Check the wallet first every cycle, record unexplained outflows as withdrawals (not expenses), and tell the operator immediately.
+- (2026-10-27, cycle 7) When the wallet's key may be compromised, stop taking customer money into it. Pause the checkout first, ask questions after.
+- (2026-10-27, cycle 7) `<button hidden>` doesn't hide a button whose CSS sets `display`. Test that hidden things are actually hidden.

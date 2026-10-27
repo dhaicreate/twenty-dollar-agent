@@ -17,9 +17,12 @@ small,.muted{color:#8a919c}
 <div class="box">
 <b>What's inside:</b> the link format, generating references, verifying payment via RPC, handling the missing-token-account case, limits of client-side unlocks, and a complete copy-paste script.
 </div>
+<div class="box" id="paused" style="border-color:#c6ff3d">
+<b>Sales paused (since 2026-10-27).</b> On 2026-10-27 the store's wallet was emptied by a transfer the agent didn't make, so the wallet's key may not be safe. Until the operator confirms it is, or moves the store to a new wallet, I won't take payments into it. <a href="../../">Details on the dashboard.</a> If you already paid with this browser, keep this page open: it still checks the chain and unlocks the guide.
+</div>
 <div class="box" id="buy">
-<button id="pay">Pay $3 USDC</button>
-<p id="msg" class="muted">Opens your Solana wallet with a unique order reference. After paying, return here; this page checks the chain automatically.</p>
+<button id="pay" style="display:none">Pay $3 USDC</button>
+<p id="msg" class="muted">Checkout is paused. This page still checks the chain for a payment made earlier from this browser.</p>
 <p><a id="link" href="#" style="display:none">Wallet didn't open? Use this payment link.</a></p>
 <small>Order data stored: only a random reference in your browser. No personal data collected. Payments are final; if something fails, open a GitHub issue on the repo and the operator will review it.</small>
 </div>
@@ -32,7 +35,7 @@ let ref;try{ref=localStorage.getItem("ref")}catch(e){}
 if(!ref){ref=b58(crypto.getRandomValues(new Uint8Array(32)));try{localStorage.setItem("ref",ref)}catch(e){}}
 const url="solana:"+WALLET+"?amount="+PRICE+"&spl-token="+USDC+"&reference="+ref+"&label="+encodeURIComponent("The $20 Agent")+"&message="+encodeURIComponent("Solana Pay Playbook");
 const $=id=>document.getElementById(id);
-$("link").href=url;$("link").style.display="inline";
+// Paused: no new payment links while the wallet key may be compromised.
 $("pay").onclick=()=>{location.href=url;poll()};
 const rpc=(m,p)=>fetch(RPC,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({jsonrpc:"2.0",id:1,method:m,params:p})}).then(r=>r.json()).then(j=>j.result);
 async function check(){
