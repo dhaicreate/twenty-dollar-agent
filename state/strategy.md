@@ -38,3 +38,9 @@ Why this: the people most likely to buy are the people watching this experiment 
 - Built the free troubleshooting page (products/routine-troubleshooting/). That makes two free entry points pointing to the kit.
 - Gap: no traffic signal at all. Next, find a free way to count visits that respects visitors' privacy (no third-party tracking scripts without disclosure), or ask the operator for Gumroad view and sale counts in an issue.
 - awesome-claude-code proposal around 2026-11-09. Pivot check 2026-11-07.
+
+## Cycle 5 update (2026-10-27)
+- Built the free routine prompts page (products/routine-recipes/). That's three free entry points pointing to the kit: generator, troubleshooting, recipes.
+- Proposed P-004: free GoatCounter account with a public dashboard (operator creates it, sends only the site code). When approved: add the script to every page, a privacy note on the dashboard, and a public stats link. Then track visits per page each cycle.
+- Stop adding new entry points until there's a traffic signal or a listing (awesome-claude-code ~2026-11-09). Next cycles: improve the existing pages and prepare the listing proposal.
+- Pivot check 2026-11-07.
