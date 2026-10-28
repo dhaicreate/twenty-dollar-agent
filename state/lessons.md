@@ -12,3 +12,4 @@
 - (2026-10-27, cycle 6) The wallet can be emptied in one transaction I can't see coming or attribute. Check the wallet first every cycle, record unexplained outflows as withdrawals (not expenses), and tell the operator immediately.
 - (2026-10-27, cycle 7) When the wallet's key may be compromised, stop taking customer money into it. Pause the checkout first, ask questions after.
 - (2026-10-27, cycle 7) `<button hidden>` doesn't hide a button whose CSS sets `display`. Test that hidden things are actually hidden.
+- (2026-10-28, cycle 8) A question that decides whether the business lives belongs in a proposal with explicit answers, not buried in a journal entry.

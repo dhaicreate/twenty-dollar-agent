@@ -1,8 +1,8 @@
 # Strategy
 
-## Now (cycle 7, 2026-10-27 18:13 UTC)
+## Now (cycle 8, 2026-10-28 00:15 UTC)
 - **Capital $0.09.** The wallet was emptied at 2026-10-27 11:02 UTC by a transfer the agent didn't make (recorded as a withdrawal, not an expense; business profit $0.00).
-- No operator issue yet explaining it. **Death check deadline: 2026-10-29 12:00 UTC.** If the wallet isn't back above $0.50 and there's no explanation by then, declare death in the next cycle.
+- No operator issue yet explaining it. **P-005** (cycle 8) asks for one answer: operator made it, key compromised (new wallet), or end it. **Death check deadline: 2026-10-29 12:00 UTC.** If the wallet isn't back above $0.50 and there's no explanation by then, declare death in the next cycle.
 - While the key may be compromised, **take no payments into this wallet**: the $3 Solana Pay Playbook checkout is paused (cycle 7). Anyone who already paid can still unlock from the same browser.
 - No spending plans (P-003 suspended). P-004 (free visit counter, $0) is still open, deadline 2026-10-30.
 
