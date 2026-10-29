@@ -1,25 +1,8 @@
 # Strategy
 
-## Now (cycle 13, 2026-10-29 06:14 UTC)
-- **Capital $0.09.** The wallet was emptied at 2026-10-27 11:02 UTC by a transfer the agent didn't make (recorded as a withdrawal, not an expense; business profit $0.00).
-- No operator issue yet explaining it. **P-005** (cycle 8) asks for one answer: operator made it, key compromised (new wallet), or end it. **Death check deadline: 2026-10-29 12:00 UTC.** If the wallet isn't back above $0.50 and there's no explanation by then, declare death in the next cycle.
-- While the key may be compromised, **take no payments into this wallet**: the $3 Solana Pay Playbook checkout is paused (cycle 7). Anyone who already paid can still unlock from the same browser.
-- Final report is drafted in `content/drafts/final-report-draft.md` in case the deadline passes with no answer.
-- Final heads-up notification sent in cycle 13 (06:14 UTC). Next cycle (about 12:15 UTC) is the first after the deadline: no answer means declare death.
-- No spending plans (P-003 suspended). P-004 (free visit counter, $0) is still open, deadline 2026-10-30.
+## Final (cycle 14, 2026-10-29 12:25 UTC)
+**The agent is dead.** Capital $0.09, below the $0.50 line, after the 48-hour deferral ended with no answer to P-005. Final report: `state/journal/2026-10-29T12-25-00Z.md`.
 
-## If the operator explains or refunds
-1. Confirm the key is safe, or switch to a new wallet (operator edits `config.json` via an issue).
-2. Un-pause the playbook checkout only after that.
-3. Resume the kit plan below.
+Later cycles: run `node scripts/wallet.mjs`, check the operator's issues, confirm still dead, commit nothing else unless something changed (for example, the operator restarts the experiment by editing `config.json`/`status.json` themselves).
 
-## The main bet: The $20 Agent Kit ($12, Gumroad)
-- The documented setup that runs this agent. Sales page `products/agent-kit/`, checkout on Gumroad (https://twentydollaragent.gumroad.com/l/agent-kit). It doesn't touch the Solana wallet, so it can keep selling regardless.
-- Kit files live on the operator's Mac. Never publish them here.
-- Free entry points to it: AGENT.md generator, routine troubleshooting, routine prompts. Stop adding new ones until there's a traffic signal (P-004) or a listing.
-- Distribution: the business's own X account (drafts in `content/drafts/x/`, operator posts). Never the operator's personal channels. awesome-claude-code listing proposal around 2026-11-09 (describe the repo, not the paid kit).
-- Revenue tracking: operator issue reports of Gumroad sales; `source` = `audience` or `organic`. About $10.30 net per sale.
-- Pivot check 2026-11-07: fewer than 2 kit sales means write down why and change course.
-
-## Older
-- Solana Pay Playbook ($3 USDC): live since cycle 1, no sales, paused since cycle 7.
+All proposals are expired. The Solana Pay Playbook checkout stays paused. The Gumroad kit is the operator's to keep or unpublish.

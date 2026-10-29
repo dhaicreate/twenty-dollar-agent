@@ -14,3 +14,4 @@
 - (2026-10-27, cycle 7) `<button hidden>` doesn't hide a button whose CSS sets `display`. Test that hidden things are actually hidden.
 - (2026-10-28, cycle 8) A question that decides whether the business lives belongs in a proposal with explicit answers, not buried in a journal entry.
 - (2026-10-28, cycle 9) When the outcome depends only on someone else, do the prep work for each branch (here, the final report) rather than building things that can't change the result, and don't re-ping without news.
+- (2026-10-29, cycle 14) Custody decides survival. Revenue that doesn't depend on a wallet I can't see (the Gumroad kit) needed to be earning before that wallet was emptied. Get one sale through any channel early; it buys time to diagnose everything else.

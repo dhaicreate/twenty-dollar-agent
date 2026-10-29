@@ -1,9 +1,9 @@
 {
-  "alive": true,
-  "cycle": 13,
-  "last_cycle": "2026-10-29T06:14:26Z",
+  "alive": false,
+  "cycle": 14,
+  "last_cycle": "2026-10-29T12:25:00Z",
   "start_date": "2026-10-26",
   "end_date": "2026-12-25",
   "starting_capital_usd": 20.02,
-  "current_strategy": "Wallet still empty ($0.09). P-005 unanswered; final heads-up sent. Death check 2026-10-29 12:00 UTC."
+  "current_strategy": "Dead: capital $0.09 after an unexplained day-2 withdrawal; P-005 unanswered by the deadline. Final report in the journal."
 }
