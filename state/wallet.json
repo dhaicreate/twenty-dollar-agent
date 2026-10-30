@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-10-30T12:20:03.679Z",
+  "checked_at": "2026-10-30T18:12:08.461Z",
   "address": "7rsPg8yFqSBzWjNsGhk1vR5VoZX3Fo1QLFN3VNnMvXUt",
   "sol": 0.00089088,
   "usdc": 0,
-  "sol_usd_price": 96.53,
+  "sol_usd_price": 94.4,
   "price_source": "coingecko",
-  "total_usd": 0.09,
+  "total_usd": 0.08,
   "token_accounts": [],
   "unprocessed_signatures": 0,
   "transfers": [
